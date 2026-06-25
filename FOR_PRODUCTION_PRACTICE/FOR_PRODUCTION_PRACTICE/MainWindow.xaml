@@ -1,0 +1,87 @@
+﻿<Window x:Class="FOR_PRODUCTION_PRACTICE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FOR_PRODUCTION_PRACTICE"
+        mc:Ignorable="d"
+         Height="385" Width="366" WindowStartupLocation="CenterScreen" Title="Окно авторизации" ResizeMode="NoResize" Background="LightCyan" >
+    <Grid>
+
+
+        <Border CornerRadius="1" Background="#FFBDB3D9">
+            <Border Margin="15,15,15,10" CornerRadius="20" Background="White">
+                <Grid Margin="30,25,30,12">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" MinHeight="27"  />
+                        <RowDefinition Height="Auto" MinHeight="74.91"   />
+                        <RowDefinition Height="Auto" MinHeight="55.5"  />
+                        <RowDefinition Height="Auto" MinHeight="18" />
+                        <RowDefinition Height="Auto" MinHeight="43"  />
+                        <RowDefinition Height="Auto" MinHeight="28.96"  />
+                        <RowDefinition Height="Auto" MinHeight="22"  />
+                        <RowDefinition/>
+
+
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,0,0,12" Grid.Row="1">
+                        <TextBlock  Text="Логин:" FontSize="15" Margin="0,0,0,5" />
+                        <Border CornerRadius="10" BorderBrush="Black"   Background="LightGray" >
+                            <TextBox x:Name="login_entry" Text="Введите логин" VerticalAlignment="Center" Background="Transparent" VerticalContentAlignment="Center" Padding="12,10" BorderBrush="#F8F9FA" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" />
+                        </Border>
+                    </StackPanel>
+                    <TextBox x:Name="Titlle" BorderBrush="White"    FontSize="20" FontFamily="Times New Roman"  IsReadOnly="True" TextWrapping="Wrap" Text="Авторизация" VerticalAlignment="Center" HorizontalAlignment="Center" Width="122" Foreground="#FF1B718D" Height="25"   />
+                    <StackPanel Margin="0,68,0,5" Grid.Row="1" Grid.RowSpan="2">
+                        <TextBlock  Text="Пароль:" FontSize="15" Margin="0,0,0,5"/>
+                        <Border CornerRadius="10" BorderBrush="Black"   Background="lightgray" >
+                            <Grid>
+                                <PasswordBox x:Name="password_entry"  VerticalAlignment="Center" Background="Transparent" VerticalContentAlignment="Center" Padding="12,10" BorderBrush="#F8F9FA" GotFocus="TextBox_GotFocus_1" LostFocus="password_entry_LostFocus" />
+                                <TextBox x:Name="password_show"  Padding="12,10" Text="Введите пароль"   VerticalAlignment="Center" Background="Transparent" BorderThickness="0" GotFocus="TextBox_GotFocus_1" LostFocus="TextBox_GotFocus_1"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                    <CheckBox x:Name="Show_Password" Grid.Row="3" Content="Показать пароль" Margin="0,0,0,42" Grid.RowSpan="2" Checked="Show_Password_Checked" Unchecked="Show_Password_Unchecked" IsChecked="False"  />
+                    <WrapPanel Grid.Row="5" Margin="2,2,2,1">
+                        <Label  Content="Нет аккаунта?" Margin="0,0,0,0"/>
+                        <Button Content="Зарегистрируйся" Padding="0,0,0,0" Background="White" BorderBrush="White" Foreground="Blue" Width="147" Margin="2" Click="Button_Click_3">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </WrapPanel>
+
+                    <Grid Grid.Row="4" Margin="0,0,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="127.5"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="Войти" Grid.Column="0" BorderThickness="0" Padding="20,12" Background="LightGreen" Click="Button_Click_2"  >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Content="Выйти" Grid.Column="2" Background="#DC143C" Click="Button_Click_1" Padding="20,12" >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+
+                    </Grid>
+                    <TextBox Grid.Row="6" VerticalAlignment="Center"   x:Name="Show_result" HorizontalAlignment="Center" TextWrapping="Wrap"   BorderThickness="0"  TextAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+
+            </Border>
+
+
+        </Border>
+    </Grid>
+</Window>

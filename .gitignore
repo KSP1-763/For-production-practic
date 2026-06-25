@@ -1,0 +1,10 @@
+# Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.mdf
+*.ldf
+*.log
+packages/

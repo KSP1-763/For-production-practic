@@ -1,0 +1,61 @@
+﻿<Window x:Class="FOR_PRODUCTION_PRACTICE.Windows.Engineer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FOR_PRODUCTION_PRACTICE.Windows"
+        mc:Ignorable="d"
+        Title="Engineer" Height="450" Width="800">
+    <Grid Background="#F0F2F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#3498DB" Padding="10">
+            <Grid>
+                <TextBlock Text="Инженер" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                <Button Content="Выйти" HorizontalAlignment="Right" Background="#E74C3C" Foreground="White" BorderThickness="0" Padding="10,5" Click="LogoutButton_Click"/>
+            </Grid>
+        </Border>
+
+        <TabControl Grid.Row="1" Margin="10">
+            <TabItem Header="Заявки">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Button Content="Назначить мне" Background="#3498DB" Foreground="White" BorderThickness="0" Padding="10,5" Click="AssignToMe_Click"/>
+                        <Button Content="Изменить статус" Background="#F39C12" Foreground="White" BorderThickness="0" Padding="10,5" Margin="5,0" Click="ChangeStatus_Click"/>
+                        <Button Content="Обновить" Background="#27AE60" Foreground="White" BorderThickness="0" Padding="10,5" Click="RefreshRequests_Click"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="RequestsGrid" Grid.Row="1" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Binding="{Binding Id_request}" Width="50"/>
+                            <DataGridTextColumn Header="Номер" Binding="{Binding RequestNumber}" Width="100"/>
+                            <DataGridTextColumn Header="Оборудование" Binding="{Binding EquipmentType}" Width="100"/>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="150"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100"/>
+                            <DataGridTextColumn Header="Заявитель" Binding="{Binding RequesterName}" Width="120"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Оборудование">
+                <DataGrid x:Name="EquipmentGrid" Margin="10" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Инв. №" Binding="{Binding InventoryNumber}" Width="100"/>
+                        <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="100"/>
+                        <DataGridTextColumn Header="Марка" Binding="{Binding Brand}" Width="100"/>
+                        <DataGridTextColumn Header="Модель" Binding="{Binding Model}" Width="100"/>
+                        <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
